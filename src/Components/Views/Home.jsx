@@ -1,45 +1,44 @@
-import React from 'react'
-// import SidebarL from '../Pages/SidebarL'
+import React, { useState } from 'react'
 import SidebarLeft from '../Pages/SidebarLeft'
+import SidebarRight from '../Pages/SidebarRight'
+import SidebarLeftMessage from '../Pages/SidebarLeftMessage'
+import SidebarLeftNotification from '../Pages/SidebarLeftNotification'
+import SidebarLeftSearch from '../Pages/SidebarLeftSearch'
 
 const Home = () => {
-  //  const [activeTab, setActiveTab] = useState("posts");
-  return (
- <div className="bg-gray-200 grid lg:grid-cols-4 xl:grid-cols-6 min-h-screen bg-gray-200">
-      <div className="lg:col-span-1">
-        <SidebarLeft />
-      </div>
-      <main className="lg:col-span-2 xl:col-span-4 bg-gray-100 p-8 h-auto overflow">
-        {/* <button activeTab={activeTab} setActiveTab={setActiveTab} >NavBar</button> */}
-        {/* <NavBar activeTab={activeTab} setActiveTab={setActiveTab} />
-        <Header />
-        {activeTab === "posts" && ( */}
-          <section className="mt-10 mb-10">
-            <div className="bg-gray-400 p-8 rounded-xl text-gray-500 text-lg">
-              {/* <Post /> */}
-            </div>
-          </section>
-        {/* )} */}
-{/* 
-        {activeTab === "events" && (
-          <section className="mt-10 mb-10">
-            <div className="text-gray-700 text-xl">Eventos aquí</div>
-          </section>
-        )}
+const [activePanel, setActivePanel] = useState(null); 
 
-        {activeTab === "notifications" && (
-          <section className="mt-10 mb-10">
-            <div className="text-gray-700 text-xl">Notificaciones aquí</div>
-          </section>
-        )} */}
+  return (
+    <div className="bg-gray-200 grid lg:grid-cols-4 xl:grid-cols-6 min-h-screen bg-gray-200">
+       <div className="lg:col-span-1 relative">
+        <div className="relative z-20">
+          <SidebarLeft
+            onMessagesClick={() => setActivePanel('messages')}
+            onNotificationsClick={() => setActivePanel('notifications')}
+            onSearchClick={() => setActivePanel('search')}
+          />
+        </div>
+
+        {activePanel && (
+          <div className="absolute inset-0 z-10 pointer-events-none">
+            <div className="pointer-events-auto">
+              {activePanel === 'messages' && <SidebarLeftMessage />}
+              {activePanel === 'notifications' && <SidebarLeftNotification />}
+              {activePanel === 'search' && <SidebarLeftSearch />}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <main className="lg:col-span-2 ml-[4.94rem] xl:col-span-4 bg-gray-100 p-8 min-h-screen overflow">
+        {/* Tu contenido principal */}
       </main>
+
       <div className="lg:col-span-1">
-        {/* <SideBarR /> */}
+        <SidebarRight />
       </div>
     </div>
   )
 }
 
-export default Home   
-      
-   
+export default Home

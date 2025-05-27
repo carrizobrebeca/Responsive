@@ -41,12 +41,18 @@ code {
 .minimize a span {
   display: none;
 }
-/* 
-@keyframes scaleBackground {
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* @keyframes scaleBackground {
   0% {
     background-size: 100%;
   }
   100% {
     background-size: 110%;
   }
-} */
+}  */
