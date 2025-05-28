@@ -112,7 +112,7 @@ const SidebarLeftNotification = () => {
                 </div>
 
             </div>
-
+<h2 className="w-full border-t-2 border-gray-300"></h2>
             <div className="flex-col pt-7 pb-7 font-bold text-text items-center w-full">Esta semana</div>
             <div className="w-full flex-1 overflow-y-auto pr-2 hide-scrollbar">
                 <div className="w-full flex items-center pt-7 pb-7">

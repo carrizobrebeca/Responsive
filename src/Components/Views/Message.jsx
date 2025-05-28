@@ -6,7 +6,7 @@ import SidebarLeftNotification from '../Pages/SidebarLeftNotification'
 import SidebarLeftSearch from '../Pages/SidebarLeftSearch'
 import Header from '../Pages/Header'
 
-const Home = () => {
+const Message = () => {
   const [activePanel, setActivePanel] = useState(null);
   const [isSidebarMinimized, setIsSidebarMinimized] = useState(false);
 
@@ -57,4 +57,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Message

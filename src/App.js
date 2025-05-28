@@ -4,6 +4,7 @@ import "./App.css";
 import Landing from "./Components/Views/Landing";
 import Home from "./Components/Views/Home";
 import Login from "./Components/Views/Login";
+import Profile from "./Components/Views/Profile";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
-   
+    <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );
